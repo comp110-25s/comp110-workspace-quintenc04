@@ -4,6 +4,11 @@ __author__ = "730558323"
 
 from exercises.ex03.dictionary import invert, favorite_color, count, bin_len
 
+def test_invert_error() -> None:
+    with pytest.raises(KeyError):
+        my_dictionary = {"kris": "jordan", "michael": "jordan"}
+        invert(my_dictionary)
+
 def test_invert_use1() -> None:
     ##blah blah
     ##assert x == blah blah
