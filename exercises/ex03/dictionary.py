@@ -1,7 +1,5 @@
 """Exercise 3"""
 
-import pytest
-
 __author__ = "730558323"
 
 
@@ -28,25 +26,7 @@ def count(values: list[str]) -> dict[str, int]:
 
 
 def favorite_color(colors: dict[str, str]) -> str:
-    listed_favs: list[str] = list()
-    for i in colors:
-        listed_favs.append(colors[i])
-    counts = count(listed_favs)
-    idx: int = 0
-    highest: list[int] = list()
-    for i in counts:
-        if idx == 0:
-            highest.append(counts[i])
-        if 0 < idx < len(counts):
-            if counts[i] > highest[idx - 1]:
-                highest[idx - 1] = counts[i]
-        idx += 1
-    for i in counts:
-        if highest == counts[i]:
-            return i
-
-
-def favorite_color(colors: dict[str, str]) -> str:
+    """finds most popular favorite color among a list of people's favorites"""
     listed_favs: list[str] = list()
     for i in colors:
         listed_favs.append(colors[i])
@@ -56,11 +36,12 @@ def favorite_color(colors: dict[str, str]) -> str:
     for color in counts:
         if counts[color] > highest:
             highest = counts[color]
-            favorite = color
-    return favorite
+            fav_color = color
+    return fav_color
 
 
 def bin_len(par: list[str]) -> dict[int, set[str]]:
+    """returns strings in bins sorted by string length"""
     bins: dict[int, set[str]] = dict()
     for i in par:
         str_len = len(i)
