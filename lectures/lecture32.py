@@ -11,7 +11,7 @@ class Node:
         self.value = value
         self.next = next
 
-    def __str__(self):
+    def __str__(self) -> str:
         if self.next is None:
             return f"{self.value} -> None"
         else:
